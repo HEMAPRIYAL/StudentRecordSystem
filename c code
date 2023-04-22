@@ -1,0 +1,250 @@
+# StudentRecordSystem
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int i = 0;
+struct sinfo 
+{
+char fname[50];
+char lname[50];
+char dept[20];
+int roll,ph,m1,m2,m3,m4,m5,m6;
+float cgpa;
+} st[55]; 
+void add_student()
+{
+printf("*********************************************************\n");
+printf("\t\tAdd the Students Details\t\t\t\n");
+printf("*********************************************************\n");
+printf("Enter the first name of student\n");
+scanf("%s", st[i].fname);
+printf("Enter the last name of student\n");
+scanf("%s", st[i].lname);
+printf("Enter the Register Number\n");
+scanf("%d", &st[i].roll);
+printf("enter the department\n");
+scanf("%s",st[i].dept);
+printf("enter the contact no\n");
+scanf("%d",&st[i].ph);
+printf("Enter the CGPA you obtained\n");
+scanf("%f", &st[i].cgpa);
+printf("ENTER THE MARKS OBTAINED BY THE STUDENT\n");
+printf("*******************************************************\n");
+printf("enter marks for ENGLISH:\n");
+scanf("%d",&st[i].m1);
+printf("enter marks for PHYSICS:\n");
+scanf("%d",&st[i].m2);
+printf("enter marks for ENVIRONMENTAL SCIENCE :\n");
+scanf("%d",&st[i].m3);
+printf("enter marks for MATHEMATICS:\n");
+scanf("%d",&st[i].m4);
+printf("enter marks for C PROGAMMING:\n");
+scanf("%d",&st[i].m5);
+printf("enter marks for BASIC ELECTRONICS:\n");
+scanf("%d",&st[i].m6);
+printf("**********************************************************\n");
+printf("*       FIRST NAME              :        %s\n",st[i].fname);
+printf("*       LAST NAME               :        %s\n",st[i].lname);
+printf("*       REGISTER NUMBER         :        %d\n",st[i].roll);
+printf("*       DEPARTMENT              :        %s\n",st[i].dept);
+printf("*       CONTACT NUMBER          :        %d\n",st[i].ph);
+printf("*       CGPA OBTAINED           :        %f\n",st[i].cgpa);
+printf("**********************************************************\n");
+printf("\t\tTHE MARKS OBTAINED BY THE STUDENT\t\t\n");
+printf("**********************************************************\n");
+printf("*       ENGLISH                 :        %d\n",st[i].m1);
+printf("*       PHYSICS                 :        %d\n",st[i].m2);
+printf("*       ENVIRONMENTAL SCIENCE   :        %d\n",st[i].m3);
+printf("*       MATHEMATICS             :        %d\n",st[i].m4);
+printf("*       C PROGRAMMING           :        %d\n",st[i].m5);
+printf("*       BASIC ELECTRONICS       :        %d\n",st[i].m6);
+printf("**********************************************************\n");
+i = i + 1;
+} 
+void find_rl()
+{
+int x;
+printf("*******************************************************\n");
+printf("\t\t\tFIND THE STUDENT DETAILS BY REGISTER NUMBER\t\t\t\n");
+printf("************************************************************\n");
+printf("Enter the Register Number of the student\n");
+scanf("%d", &x);
+for (int j = 1; j <= i; j++) 
+{
+if (x == st[i].roll) 
+{
+printf("**********************************************************\n");
+printf("\t\t\tThe Students Details are\t\t\t\n");
+printf("**********************************************************\n");
+printf("*       FIRST NAME              :        %s\n",st[i].fname);
+printf("*       LAST NAME               :        %s\n",st[i].lname);
+printf("*       REGISTER NUMBER         :        %d\n",st[i].roll);
+printf("*       DEPARTMENT              :        %s\n",st[i].dept);
+printf("*       CONTACT NUMBER          :        %d\n",st[i].ph);
+printf("*       CGPA OBTAINED           :        %f\n",st[i].cgpa);
+printf("**********************************************************\n");
+printf("\t\tTHE MARKS OBTAINED BY THE STUDENT\t\t\n");
+printf("**********************************************************\n");
+printf("*       ENGLISH                 :        %d\n",st[i].m1);
+printf("*       PHYSICS                 :        %d\n",st[i].m2);
+printf("*       ENVIRONMENTAL SCIENCE   :        %d\n",st[i].m3);
+printf("*       MATHEMATICS             :        %d\n",st[i].m4);
+printf("*       C PROGRAMMING           :        %d\n",st[i].m5);
+printf("*       BASIC ELECTRONICS       :        %d\n",st[i].m6);
+printf("**********************************************************\n");
+}
+break;
+}
+} 
+void find_fn()
+{   
+printf("*************************************************************\n");
+printf("\t\t\tFIND THE STUDENT DETAILS BY FIRST NAME\t\t\t\n");
+printf("*************************************************************\n");
+char a[50];
+printf("Enter the First Name of the student\n");
+scanf("%s", a);
+int c = 0;
+for (int j = 1; j <= i; j++) 
+{
+if (!strcmp(st[j].fname, a)) 
+{
+printf("**********************************************************\n");
+printf("\t\t\tThe Students Details are\t\t\t\n");
+printf("**********************************************************\n");
+printf("*       FIRST NAME              :        %s\n",st[i].fname);
+printf("*       LAST NAME               :        %s\n",st[i].lname);
+printf("*       REGISTER NUMBER         :        %d\n",st[i].roll);
+printf("*       DEPARTMENT              :        %s\n",st[i].dept);
+printf("*       CONTACT NUMBER          :        %d\n",st[i].ph);
+printf("*       CGPA OBTAINED           :        %f\n",st[i].cgpa);
+printf("**********************************************************\n"); 
+printf("\t\tTHE MARKS OBTAINED BY THE STUDENT\t\t\n");
+printf("**********************************************************\n");
+printf("*       ENGLISH                 :        %d\n",st[i].m1);
+printf("*       PHYSICS                 :        %d\n",st[i].m2);
+printf("*       ENVIRONMENTAL SCIENCE   :        %d\n",st[i].m3);
+printf("*       MATHEMATICS             :        %d\n",st[i].m4);
+printf("*       C PROGRAMMING           :        %d\n",st[i].m5);
+printf("*       BASIC ELECTRONICS       :        %d\n",st[i].m6);
+printf("**********************************************************\n");
+}
+else
+printf("The First Name not Found\n");
+}
+}
+void tot_s()
+{    
+printf("*******************************************************\n");
+printf("\t\t\tTO FIND THE TOTAL NUMBER OF STUDENTS\t\t\t\n");
+printf("*********************************************************\n");
+printf("The total number of Student is %d\n",i);
+printf("\n you can have a max of 50 students\n");
+printf("you can have %d more students\n",50 - i);
+} 
+void del_s()
+{    
+printf("*************************************************************\n");
+printf("\t\t\tDELETING THE STUDENTS DETAILS BY USING REGISTER NUMBER\t\t\t\n");
+printf("*************************************************************\n");
+int a;
+printf("Enter the Register Number which you want to delete\n");
+scanf("%d", &a);
+for (int j = 1; j <= i; j++) 
+{
+if (a == st[j].roll) 
+{
+for (int k = j; k < 49; k++)
+st[k] = st[k + 1];
+i--;
+}
+}
+printf("The Roll Number is removed Successfully\n");
+}
+void up_s()
+{
+printf("*************************************************************\n");
+printf("\t\t\tUPDATING THE STUDENTS DETAILS BY USING REGISTER NUMBER\t\t\t\n");
+printf("*************************************************************\n");
+printf("Enter the roll numberto update the entry : ");
+long int x;
+scanf("%ld", &x);
+for (int j = 0; j < i; j++) 
+{
+if (st[j].roll == x) 
+{
+printf("1. first name\n2. last name\n3. register no.\n4. CGPA\n5. courses\n");
+int z;
+scanf("%d", &z);
+switch (z) 
+{
+case 1:
+printf("Enter the new first name : \n");
+scanf("%s", st[j].fname);
+break;
+case 2:
+printf("Enter the new last name : \n");
+scanf("%s", st[j].lname);
+break;
+case 3:
+printf("Enter the new register numnber : \n");
+scanf("%d", &st[j].roll);
+break;
+case 4:
+printf("Enter the new CGPA : \n");
+scanf("%f", &st[j].cgpa);
+break;
+case 5:
+break;
+}
+printf("UPDATED SUCCESSFULLY.\n");
+}
+}
+}
+int main()
+{
+int choice, count;
+while (i = 1) 
+{
+printf("=================================================================================");
+printf("\n");
+printf("\t\t\tSTUDENT RECORD SYSTEM\t\t\t");
+printf("\n");
+printf("==================================================================================\n");
+printf("1. Add the Student Details\n");
+printf("2. Find the Student Details by Roll Number\n");
+printf("3. Find the Student Details by First Name\n");
+printf("4. Find the Total number of Students\n");
+printf("5. Delete the Students Details by Register Number\n");
+printf("6. Update the Students Details by Roll Number\n");
+printf("7. To Exit\n");
+printf("\n");
+printf("Enter your choice\n");
+scanf("%d", &choice);
+switch (choice) 
+{
+case 1:
+add_student();
+break;
+case 2:
+find_rl();
+break;
+case 3:
+find_fn();
+break;
+case 4:
+tot_s();
+break;
+case 5:
+del_s();
+break;
+case 6:
+up_s();
+break;
+case 7:
+exit(0);
+break;
+}
+}
+}
